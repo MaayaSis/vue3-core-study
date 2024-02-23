@@ -1143,7 +1143,7 @@ function baseCreateRenderer(
       }
     }
   }
-
+  // 定义: processComponent 函数, 针对组件的 diff 渲染
   const processComponent = (
     n1: VNode | null,
     n2: VNode,

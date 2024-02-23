@@ -1,0 +1,79 @@
+{
+	"files": [
+		{
+			"path": "packages/runtime-dom/src/index.ts",
+			"bookmarks": [
+				{
+					"line": 40,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 65,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 74,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 77,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/runtime-core/src/renderer.ts",
+			"bookmarks": [
+				{
+					"line": 324,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 357,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1145,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 2320,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/runtime-core/src/apiCreateApp.ts",
+			"bookmarks": [
+				{
+					"line": 189,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 296,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 311,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 330,
+					"column": 0,
+					"label": ""
+				}
+			]
+		}
+	]
+}

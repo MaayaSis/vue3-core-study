@@ -355,6 +355,7 @@ function baseCreateRenderer(
 
   // Note: functions inside this closure should use `const xxx = () => {}`
   // style in order to prevent being inlined by minifiers.
+  // 定义: patch 函数, 进行 diff 算法
   const patch: PatchFn = (
     n1,
     n2,
@@ -2317,7 +2318,7 @@ function baseCreateRenderer(
     }
     return hostNextSibling((vnode.anchor || vnode.el)!)
   }
-
+  // 定义: render 函数, 判断当前渲染操作是卸载还是挂载
   const render: RootRenderFunction = (vnode, container, isSVG) => {
     if (vnode == null) {
       if (container._vnode) {

@@ -355,7 +355,7 @@ function baseCreateRenderer(
 
   // Note: functions inside this closure should use `const xxx = () => {}`
   // style in order to prevent being inlined by minifiers.
-  // 定义: patch 函数, 进行 diff 算法
+  // 定义: patch 函数, 判断该次要挂载的 VNode 的类型, 再依类型调用真正的挂载函数
   const patch: PatchFn = (
     n1,
     n2,
@@ -574,7 +574,7 @@ function baseCreateRenderer(
     }
     hostRemove(anchor!)
   }
-
+  // 定义: processElement 函数, 针对单根组件进行 diff 渲染
   const processElement = (
     n1: VNode | null,
     n2: VNode,
@@ -624,7 +624,8 @@ function baseCreateRenderer(
     let el: RendererElement
     let vnodeHook: VNodeHook | undefined | null
     const { type, props, shapeFlag, transition, dirs } = vnode
-
+    
+    // 执行: hostCreateElement 函数, 将 VNode 创建为真正的 DOM
     el = vnode.el = hostCreateElement(
       vnode.type as string,
       isSVG,
@@ -635,8 +636,10 @@ function baseCreateRenderer(
     // mount children first, since some props may rely on child content
     // being already rendered, e.g. `<select value>`
     if (shapeFlag & ShapeFlags.TEXT_CHILDREN) {
+      // 执行: hostSetElementText 函数, 渲染文本 DOM
       hostSetElementText(el, vnode.children as string)
-    } else if (shapeFlag & ShapeFlags.ARRAY_CHILDREN) {
+    }else if (shapeFlag & ShapeFlags.ARRAY_CHILDREN) {
+      // 执行: mountChildren 函数, 如果子节点是一个数组的场景
       mountChildren(
         vnode.children as VNodeArrayChildren,
         el,
@@ -655,6 +658,7 @@ function baseCreateRenderer(
     // scopeId
     setScopeId(el, vnode, vnode.scopeId, slotScopeIds, parentComponent)
     // props
+    // 执行: props 属性的处理
     if (props) {
       for (const key in props) {
         if (key !== 'value' && !isReservedProp(key)) {
@@ -710,6 +714,7 @@ function baseCreateRenderer(
     if (needCallTransitionHooks) {
       transition!.beforeEnter(el)
     }
+    // 执行: hostInsert 函数, 将 el 挂载到 container 中
     hostInsert(el, container, anchor)
     if (
       (vnodeHook = props && props.onVnodeMounted) ||
@@ -761,7 +766,8 @@ function baseCreateRenderer(
       }
     }
   }
-
+  
+  // 定义: mountChildren 函数, 循环遍历并 patch 子节点
   const mountChildren: MountChildrenFn = (
     children,
     container,
@@ -1041,7 +1047,7 @@ function baseCreateRenderer(
       }
     }
   }
-
+  // 定义: processFragment 函数, 针对多根组件包裹 Fragment 后的元素执行 diff 渲染
   const processFragment = (
     n1: VNode | null,
     n2: VNode,
@@ -1194,6 +1200,7 @@ function baseCreateRenderer(
     // mounting
     const compatMountInstance =
       __COMPAT__ && initialVNode.isCompatRoot && initialVNode.component
+    // 执行: 调用 createComponentInstance 函数创建组件实例
     const instance: ComponentInternalInstance =
       compatMountInstance ||
       (initialVNode.component = createComponentInstance(
@@ -1221,6 +1228,7 @@ function baseCreateRenderer(
       if (__DEV__) {
         startMeasure(instance, `init`)
       }
+      // 执行: setupComponent 函数, 初始化组件, 并对组件的所有数据进行操作和赋值
       setupComponent(instance)
       if (__DEV__) {
         endMeasure(instance, `init`)
@@ -1240,7 +1248,7 @@ function baseCreateRenderer(
       }
       return
     }
-
+    // 执行: setupRenderEffect 响应式的副作用函数
     setupRenderEffect(
       instance,
       initialVNode,
@@ -1300,8 +1308,10 @@ function baseCreateRenderer(
     isSVG,
     optimized
   ) => {
+    // 定义: componentUpdateFn 函数, 执行响应式依赖初始收集或依赖更新重新执行相关代码
     const componentUpdateFn = () => {
       if (!instance.isMounted) {
+        // 执行: 初始收集组件中的依赖
         let vnodeHook: VNodeHook | null | undefined
         const { el, props } = initialVNode
         const { bm, m, parent } = instance
@@ -1445,6 +1455,7 @@ function baseCreateRenderer(
         // updateComponent
         // This is triggered by mutation of component's own state (next: null)
         // OR parent calling processComponent (next: VNode)
+        // 执行: 依赖值更改, 重新渲染组件
         let { next, bu, u, parent, vnode } = instance
         let originNext = next
         let vnodeHook: VNodeHook | null | undefined

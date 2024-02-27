@@ -39,12 +39,67 @@
 					"label": ""
 				},
 				{
-					"line": 1145,
+					"line": 576,
 					"column": 0,
 					"label": ""
 				},
 				{
-					"line": 2320,
+					"line": 627,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 638,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 641,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 769,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1049,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1151,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1202,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1230,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1250,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1310,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1457,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 2331,
 					"column": 0,
 					"label": ""
 				}
@@ -70,6 +125,21 @@
 				},
 				{
 					"line": 330,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/runtime-core/src/component.ts",
+			"bookmarks": [
+				{
+					"line": 462,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 641,
 					"column": 0,
 					"label": ""
 				}

@@ -460,6 +460,7 @@ const emptyAppContext = createAppContext()
 
 let uid = 0
 
+// 定义: createComponentInstance 创建组件实例的函数
 export function createComponentInstance(
   vnode: VNode,
   parent: ComponentInternalInstance | null,
@@ -638,6 +639,7 @@ export function setupComponent(
   isInSSRComponentSetup = isSSR
 
   const { props, children } = instance.vnode
+  // 判断: 是否是一个有状态的组件
   const isStateful = isStatefulComponent(instance)
   initProps(instance, props, isStateful, isSSR)
   initSlots(instance, children)
@@ -666,7 +668,7 @@ function setupStatefulComponent(
       }
     }
     if (Component.directives) {
-      const names = Object.keys(Component.directives)
+      const names = Object .keys(Component.directives)
       for (let i = 0; i < names.length; i++) {
         validateDirectiveName(names[i])
       }

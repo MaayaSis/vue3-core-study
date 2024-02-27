@@ -4,16 +4,6 @@
 			"path": "packages/runtime-dom/src/index.ts",
 			"bookmarks": [
 				{
-					"line": 40,
-					"column": 0,
-					"label": ""
-				},
-				{
-					"line": 65,
-					"column": 0,
-					"label": ""
-				},
-				{
 					"line": 74,
 					"column": 0,
 					"label": ""
@@ -139,7 +129,12 @@
 					"label": ""
 				},
 				{
-					"line": 641,
+					"line": 655,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 696,
 					"column": 0,
 					"label": ""
 				}

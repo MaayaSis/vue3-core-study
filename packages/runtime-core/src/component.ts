@@ -632,6 +632,7 @@ export function isStatefulComponent(instance: ComponentInternalInstance) {
 
 export let isInSSRComponentSetup = false
 
+// 定义: setupComponent 函数, 进行初始化组件
 export function setupComponent(
   instance: ComponentInternalInstance,
   isSSR = false
@@ -641,6 +642,7 @@ export function setupComponent(
   const { props, children } = instance.vnode
   // 判断: 是否是一个有状态的组件
   const isStateful = isStatefulComponent(instance)
+  // 执行: 初始化 props 与 slots
   initProps(instance, props, isStateful, isSSR)
   initSlots(instance, children)
 
@@ -651,6 +653,7 @@ export function setupComponent(
   return setupResult
 }
 
+// 定义: setupStatefulComponent 函数, 设置有状态的组件
 function setupStatefulComponent(
   instance: ComponentInternalInstance,
   isSSR: boolean
@@ -691,12 +694,14 @@ function setupStatefulComponent(
   }
   // 2. call setup()
   const { setup } = Component
+  // 判断: setup 对象有值时, 将会创建 setupContext 上下文, 上下文可以在函数中被使用, 例如 { emit, slots } 等
   if (setup) {
     const setupContext = (instance.setupContext =
       setup.length > 1 ? createSetupContext(instance) : null)
 
     setCurrentInstance(instance)
     pauseTracking()
+    // 执行: callWithErrorHandling 函数, 内部则是执行传入的 setup 函数
     const setupResult = callWithErrorHandling(
       setup,
       instance,
@@ -706,6 +711,7 @@ function setupStatefulComponent(
     resetTracking()
     unsetCurrentInstance()
 
+    // 判断: setup 函数, 执行后是否返回一个 promise 对象 
     if (isPromise(setupResult)) {
       setupResult.then(unsetCurrentInstance, unsetCurrentInstance)
       if (isSSR) {
@@ -770,6 +776,7 @@ export function handleSetupResult(
     if (__DEV__ || __FEATURE_PROD_DEVTOOLS__) {
       instance.devtoolsRawSetupState = setupResult
     }
+    // 执行: proxyRefs 函数, 代理 setup() 返回后的数据并绑定至实例
     instance.setupState = proxyRefs(setupResult)
     if (__DEV__) {
       exposeSetupStateOnRenderContext(instance)

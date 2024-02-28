@@ -37,6 +37,7 @@ export const DOMDirectiveTransforms: Record<string, DirectiveTransform> = {
   show: transformShow
 }
 
+// 定义: compile 函数, 返回用于解析 tempalte 的 baseCompile 函数
 export function compile(
   template: string,
   options: CompilerOptions = {}

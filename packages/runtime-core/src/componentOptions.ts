@@ -580,6 +580,7 @@ function createDuplicateChecker() {
 
 export let shouldCacheAccess = true
 
+// 定义: applyOptions 函数, 实现对 2.x options 的支持
 export function applyOptions(instance: ComponentInternalInstance) {
   const options = resolveMergedOptions(instance)
   const publicThis = instance.proxy! as any

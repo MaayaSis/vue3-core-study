@@ -1186,7 +1186,7 @@ function baseCreateRenderer(
       updateComponent(n1, n2, optimized)
     }
   }
-
+  // 定义: mountComponent 函数挂载组件
   const mountComponent: MountComponentFn = (
     initialVNode,
     container,

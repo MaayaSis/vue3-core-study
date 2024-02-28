@@ -64,6 +64,11 @@
 					"label": ""
 				},
 				{
+					"line": 1188,
+					"column": 0,
+					"label": ""
+				},
+				{
 					"line": 1202,
 					"column": 0,
 					"label": ""
@@ -129,12 +134,67 @@
 					"label": ""
 				},
 				{
+					"line": 634,
+					"column": 0,
+					"label": ""
+				},
+				{
 					"line": 655,
 					"column": 0,
 					"label": ""
 				},
 				{
 					"line": 696,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 752,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 806,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 819,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/vue/src/index.ts",
+			"bookmarks": [
+				{
+					"line": 15,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 91,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/compiler-dom/src/index.ts",
+			"bookmarks": [
+				{
+					"line": 39,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/compiler-core/src/compile.ts",
+			"bookmarks": [
+				{
+					"line": 60,
 					"column": 0,
 					"label": ""
 				}

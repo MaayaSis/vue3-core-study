@@ -13,6 +13,7 @@ if (__DEV__) {
 
 const compileCache: Record<string, RenderFunction> = Object.create(null)
 
+// 定义: compileToFunction 函数, 将 template 抽象为对象
 function compileToFunction(
   template: string | HTMLElement,
   options?: CompilerOptions
@@ -57,6 +58,7 @@ function compileToFunction(
     opts.isCustomElement = tag => !!customElements.get(tag)
   }
 
+  // 执行: compile 函数, 解析 template 为 对象
   const { code } = compile(template, opts)
 
   function onError(err: CompilerError, asWarning = false) {
@@ -87,6 +89,7 @@ function compileToFunction(
   return (compileCache[key] = render)
 }
 
+// 执行: registerRuntimeCompiler 函数, 在组件实例设置中传入用于将 template 抽象为对象的 compileToFunction 函数
 registerRuntimeCompiler(compileToFunction)
 
 export { compileToFunction as compile }

@@ -750,6 +750,7 @@ function setupStatefulComponent(
   }
 }
 
+// 定义: handleSetupResult 函数, 进行组件实例化设置
 export function handleSetupResult(
   instance: ComponentInternalInstance,
   setupResult: unknown,
@@ -803,6 +804,7 @@ let installWithProxy: (i: ComponentInternalInstance) => void
  * For runtime-dom to register the compiler.
  * Note the exported method uses any to avoid d.ts relying on the compiler types.
  */
+// 定义: registerRuntimeCompiler 函数, 用于给编译函数赋值, 在 vue/src 入口处执行
 export function registerRuntimeCompiler(_compile: any) {
   compile = _compile
   installWithProxy = i => {
@@ -815,6 +817,7 @@ export function registerRuntimeCompiler(_compile: any) {
 // dev only
 export const isRuntimeOnly = () => !compile
 
+// 执行: finishComponentSetup 函数, 完成组件实例化设置
 export function finishComponentSetup(
   instance: ComponentInternalInstance,
   isSSR: boolean,
@@ -888,6 +891,7 @@ export function finishComponentSetup(
   if (__FEATURE_OPTIONS_API__ && !(__COMPAT__ && skipOptions)) {
     setCurrentInstance(instance)
     pauseTracking()
+    // 执行: applyOptions 函数, 支持 2.x options
     applyOptions(instance)
     resetTracking()
     unsetCurrentInstance()

@@ -1299,6 +1299,7 @@ function baseCreateRenderer(
     }
   }
 
+  // 定义: setupRenderEffect 函数, 响应式的副作用渲染
   const setupRenderEffect: SetupRenderEffectFn = (
     instance,
     initialVNode,
@@ -1492,6 +1493,7 @@ function baseCreateRenderer(
         if (__DEV__) {
           startMeasure(instance, `render`)
         }
+        // 执行: renderComponentRoot 函数, 对更改后的根组件进行重新渲染
         const nextTree = renderComponentRoot(instance)
         if (__DEV__) {
           endMeasure(instance, `render`)

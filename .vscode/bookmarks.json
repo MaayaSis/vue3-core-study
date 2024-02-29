@@ -84,17 +84,27 @@
 					"label": ""
 				},
 				{
-					"line": 1310,
+					"line": 1301,
 					"column": 0,
 					"label": ""
 				},
 				{
-					"line": 1457,
+					"line": 1311,
 					"column": 0,
 					"label": ""
 				},
 				{
-					"line": 2331,
+					"line": 1458,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1495,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 2333,
 					"column": 0,
 					"label": ""
 				}
@@ -195,6 +205,16 @@
 			"bookmarks": [
 				{
 					"line": 60,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/runtime-core/src/componentRenderUtils.ts",
+			"bookmarks": [
+				{
+					"line": 42,
 					"column": 0,
 					"label": ""
 				}

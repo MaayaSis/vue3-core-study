@@ -40,6 +40,7 @@ export function markAttrsAccessed() {
 
 type SetRootFn = ((root: VNode) => void) | undefined
 
+// 定义: renderComponentRoot 函数, 对组件变更的组件进行重渲染
 export function renderComponentRoot(
   instance: ComponentInternalInstance
 ): VNode {

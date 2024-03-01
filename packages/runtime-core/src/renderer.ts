@@ -1265,6 +1265,7 @@ function baseCreateRenderer(
     }
   }
 
+  // 定义: updateComponent 函数, 在最终调用存在 VNode 上的 update 函数更新
   const updateComponent = (n1: VNode, n2: VNode, optimized: boolean) => {
     const instance = (n2.component = n1.component)!
     if (shouldUpdateComponent(n1, n2, optimized)) {

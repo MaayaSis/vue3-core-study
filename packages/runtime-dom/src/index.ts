@@ -66,6 +66,7 @@ export const hydrate = ((...args) => {
 // 定义: createApp, vue 暴露出创建 app 根组件的函数
 export const createApp = ((...args) => {
   console.log(args)
+  debugger
   const app = ensureRenderer().createApp(...args)
   if (__DEV__) {
     injectNativeTagCheck(app)

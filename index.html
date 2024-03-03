@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <template id="my-app">
+    <h1>index.html</h1>
+    <div>author: {{ name }}</div>
+    <button @click="updateAuthor">update author</button>
+  </template>
+
+  <script src="./packages/vue/dist/vue.global.js"></script>
+  <script type="text/javascript">
+    const app = {
+      template: "#my-app",
+      data() {
+        return {
+          name: 'Sister'
+        }
+      },
+      methods: {
+        updateAuthor() {
+          this.name = this.name === 'Maaya' ? 'Sister' : 'Maaya'
+        }
+      }
+    }
+    const App = Vue.createApp(app)
+    App.mount('#app')
+  </script>
+</body>
+
+</html>

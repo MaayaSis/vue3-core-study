@@ -1200,7 +1200,7 @@ function baseCreateRenderer(
     // mounting
     const compatMountInstance =
       __COMPAT__ && initialVNode.isCompatRoot && initialVNode.component
-    // 执行: 调用 createComponentInstance 函数创建组件实例
+    // 执行: createComponentInstance 函数创建组件实例
     const instance: ComponentInternalInstance =
       compatMountInstance ||
       (initialVNode.component = createComponentInstance(

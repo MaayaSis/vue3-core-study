@@ -4,12 +4,12 @@
 			"path": "packages/runtime-dom/src/index.ts",
 			"bookmarks": [
 				{
-					"line": 75,
+					"line": 74,
 					"column": 0,
 					"label": ""
 				},
 				{
-					"line": 78,
+					"line": 77,
 					"column": 0,
 					"label": ""
 				}
@@ -105,11 +105,6 @@
 				},
 				{
 					"line": 1496,
-					"column": 0,
-					"label": ""
-				},
-				{
-					"line": 1566,
 					"column": 0,
 					"label": ""
 				},
@@ -230,6 +225,16 @@
 			"bookmarks": [
 				{
 					"line": 42,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/runtime-core/src/componentOptions.ts",
+			"bookmarks": [
+				{
+					"line": 582,
 					"column": 0,
 					"label": ""
 				}

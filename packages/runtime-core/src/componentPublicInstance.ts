@@ -276,6 +276,7 @@ export const isReservedPrefix = (key: string) => key === '_' || key === '$'
 const hasSetupBinding = (state: Data, key: string) =>
   state !== EMPTY_OBJ && !state.__isScriptSetup && hasOwn(state, key)
 
+// 定义: PublicInstanceProxyHandlers 代理函数, 描述了 get 及 set 的取值与赋值逻辑
 export const PublicInstanceProxyHandlers: ProxyHandler<any> = {
   get({ _: instance }: ComponentRenderContext, key: string) {
     const { ctx, setupState, data, props, accessCache, type, appContext } =
@@ -296,6 +297,7 @@ export const PublicInstanceProxyHandlers: ProxyHandler<any> = {
     if (key[0] !== '$') {
       const n = accessCache![key]
       if (n !== undefined) {
+        // 判断: 如果缓存中有值, 则取缓存中的值
         switch (n) {
           case AccessTypes.SETUP:
             return setupState[key]
@@ -308,20 +310,24 @@ export const PublicInstanceProxyHandlers: ProxyHandler<any> = {
           // default: just fallthrough
         }
       } else if (hasSetupBinding(setupState, key)) {
+        // 判断: 如果 setup 中有值, 则将 setup 中的值存到缓存中并返回
         accessCache![key] = AccessTypes.SETUP
         return setupState[key]
       } else if (data !== EMPTY_OBJ && hasOwn(data, key)) {
+        // 判断: 如果 data 中有值
         accessCache![key] = AccessTypes.DATA
         return data[key]
       } else if (
         // only cache other properties when instance has declared (thus stable)
         // props
+        // 判断: 如果 props 中有值
         (normalizedProps = instance.propsOptions[0]) &&
         hasOwn(normalizedProps, key)
       ) {
         accessCache![key] = AccessTypes.PROPS
         return props![key]
       } else if (ctx !== EMPTY_OBJ && hasOwn(ctx, key)) {
+        // 判断: 最后去 ctx(methods, computed...) 中查找
         accessCache![key] = AccessTypes.CONTEXT
         return ctx[key]
       } else if (!__FEATURE_OPTIONS_API__ || shouldCacheAccess) {

@@ -791,7 +791,7 @@ export function applyOptions(instance: ComponentInternalInstance) {
       register((hook as Function).bind(publicThis))
     }
   }
-
+  // 执行: registerLifecycleHook 函数, 注入 hook 的第一步
   registerLifecycleHook(onBeforeMount, beforeMount)
   registerLifecycleHook(onMounted, mounted)
   registerLifecycleHook(onBeforeUpdate, beforeUpdate)

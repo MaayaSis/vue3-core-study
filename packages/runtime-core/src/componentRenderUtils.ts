@@ -73,6 +73,7 @@ export function renderComponentRoot(
     if (vnode.shapeFlag & ShapeFlags.STATEFUL_COMPONENT) {
       // withProxy is a proxy with a different `has` trap only for
       // runtime-compiled render functions using `with` block.
+      // 执行: render 渲染 template, 并将 proxy 传入
       const proxyToUse = withProxy || proxy
       result = normalizeVNode(
         render!.call(

@@ -99,17 +99,37 @@
 					"label": ""
 				},
 				{
+					"line": 1315,
+					"column": 0,
+					"label": ""
+				},
+				{
 					"line": 1459,
 					"column": 0,
 					"label": ""
 				},
 				{
-					"line": 1496,
+					"line": 1477,
 					"column": 0,
 					"label": ""
 				},
 				{
-					"line": 2335,
+					"line": 1497,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1530,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1568,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 2337,
 					"column": 0,
 					"label": ""
 				}
@@ -227,6 +247,11 @@
 					"line": 42,
 					"column": 0,
 					"label": ""
+				},
+				{
+					"line": 75,
+					"column": 0,
+					"label": ""
 				}
 			]
 		},
@@ -234,7 +259,52 @@
 			"path": "packages/runtime-core/src/componentOptions.ts",
 			"bookmarks": [
 				{
-					"line": 582,
+					"line": 793,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/runtime-core/src/apiLifecycle.ts",
+			"bookmarks": [
+				{
+					"line": 16,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 66,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/runtime-core/src/componentPublicInstance.ts",
+			"bookmarks": [
+				{
+					"line": 278,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 299,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 312,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 316,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 322,
 					"column": 0,
 					"label": ""
 				}

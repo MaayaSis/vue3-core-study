@@ -1475,6 +1475,7 @@ function baseCreateRenderer(
         }
 
         // beforeUpdate hook
+        // 执行: beforeUpdate 更新函数
         if (bu) {
           invokeArrayFns(bu)
         }
@@ -1527,6 +1528,7 @@ function baseCreateRenderer(
           updateHOCHostEl(instance, nextTree.el)
         }
         // updated hook
+        // 执行: 将 updated 函数放入执行队列中, 当子元素的 patch 操作也完成后, 再执行
         if (u) {
           queuePostRenderEffect(u, parentSuspense)
         }
@@ -2343,6 +2345,7 @@ function baseCreateRenderer(
       patch(container._vnode || null, vnode, container, null, null, null, isSVG)
     }
     flushPreFlushCbs()
+    // 执行: flushPostFlushCbs 函数, 在组件及子组件的挂载后, 执行位于队列中的 mounted 生命周期对象里的函数
     flushPostFlushCbs()
     container._vnode = vnode
   }

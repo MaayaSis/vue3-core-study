@@ -14,6 +14,7 @@ import { LifecycleHooks } from './enums'
 
 export { onActivated, onDeactivated } from './components/KeepAlive'
 
+// 定义: injectHook 函数, 注入生命周期 hook
 export function injectHook(
   type: LifecycleHooks,
   hook: Function & { __weh?: Function },
@@ -63,6 +64,7 @@ export function injectHook(
   }
 }
 
+// 定义: createHook 创建生命周期钩子的函数
 export const createHook =
   <T extends Function = () => any>(lifecycle: LifecycleHooks) =>
   (hook: T, target: ComponentInternalInstance | null = currentInstance) =>

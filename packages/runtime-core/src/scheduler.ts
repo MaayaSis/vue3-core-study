@@ -202,6 +202,7 @@ const comparator = (a: SchedulerJob, b: SchedulerJob): number => {
   return diff
 }
 
+// 定义: flushJobs 函数, 关于微任务执行的逻辑
 function flushJobs(seen?: CountMap) {
   isFlushPending = false
   isFlushing = true
@@ -216,6 +217,7 @@ function flushJobs(seen?: CountMap) {
   //    priority number)
   // 2. If a component is unmounted during a parent component's update,
   //    its update can be skipped.
+  // 执行: 微任务的排序逻辑, 需要先执行父组件, 再执行子组件
   queue.sort(comparator)
 
   // conditional usage of checkRecursiveUpdate must be determined out of
@@ -228,6 +230,7 @@ function flushJobs(seen?: CountMap) {
     : NOOP
 
   try {
+    // 执行: 遍历要执行的更新任务, 放入微任务队列中
     for (flushIndex = 0; flushIndex < queue.length; flushIndex++) {
       const job = queue[flushIndex]
       if (job && job.active !== false) {
